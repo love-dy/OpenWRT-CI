@@ -37,7 +37,7 @@ jobs:
   owrt_core:
     runs-on: ubuntu-latest
     steps:
-      - name: Free Disk Space (Ubuntu)
+      - name: Free Disk Space
         uses: jlumbroso/free-disk-space@main
         with:
           # this might remove tools that are actually needed,
@@ -50,6 +50,7 @@ jobs:
           dotnet: true
           haskell: true
           large-packages: true
+          docker-images: true
           swap-storage: false  
         
       - name: Checkout Projects
