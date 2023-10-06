@@ -16,8 +16,8 @@ git clone --depth=1 --single-branch https://github.com/linkease/istore.git
 git clone --depth=1 --single-branch --branch "dev" https://github.com/vernesong/OpenClash.git
 
 #Pass Wall
-git clone --depth=1 --single-branch https://github.com/xiaorouji/openwrt-passwall.git
-git clone --depth=1 --single-branch https://github.com/xiaorouji/openwrt-passwall-packages.git
+#git clone --depth 1 --single-branch https://github.com/xiaorouji/openwrt-passwall.git && mv -n openwrt-passwall/luci-app-passwall ./ ; rm -rf openwrt-passwall
+#git clone --depth 1 --single-branch https://github.com/xiaorouji/openwrt-passwall-packages.git ./passwall
 
 #AdGuardHome
 git clone --depth 1 --single-branch https://github.com/rufengsuixing/luci-app-adguardhome.git
