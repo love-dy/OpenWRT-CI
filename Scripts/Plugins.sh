@@ -13,7 +13,7 @@ git clone --depth=1 --single-branch https://github.com/linkease/istore.git
 #git clone --depth=1 --single-branch https://github.com/linkease/nas-packages-luci.git
 
 #Open Clash
-git clone --depth=1 --single-branch --branch "dev" https://github.com/vernesong/OpenClash.git
+git clone --depth=1 --single-branch --branch "dev" https://github.com/vernesong/OpenClash.git && mv -n OpenClash/luci-app-openclash ./ ; rm -rf OpenClash
 
 #Pass Wall
 git clone --depth 1 --single-branch https://github.com/xiaorouji/openwrt-passwall.git && mv -n openwrt-passwall/luci-app-passwall ./ ; rm -rf openwrt-passwall
@@ -38,7 +38,7 @@ export GEO_MMDB=https://github.com/alecthw/mmdb_china_ip_list/raw/release/lite/C
 export GEO_SITE=https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geosite.dat
 export GEO_IP=https://github.com/Loyalsoldier/v2ray-rules-dat/raw/release/geoip.dat
 
-cd ./OpenClash/luci-app-openclash/root/etc/openclash
+cd ./luci-app-openclash/root/etc/openclash
 
 curl -sfL -o ./Country.mmdb $GEO_MMDB
 curl -sfL -o ./GeoSite.dat $GEO_SITE
