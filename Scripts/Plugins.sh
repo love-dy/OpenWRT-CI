@@ -18,7 +18,7 @@ git clone --depth=1 --single-branch https://github.com/xiaorouji/openwrt-passwal
 #AdGuardHome
 git clone --depth 1 --single-branch https://github.com/rufengsuixing/luci-app-adguardhome.git
 #ssr-plus+
-git clone --depth 1 --single-branch https://github.com/fw876/helloworld.git
+#git clone --depth 1 --single-branch https://github.com/fw876/helloworld.git
 
 #预置OpenClash内核和GEO数据
 export CORE_VER=https://raw.githubusercontent.com/vernesong/OpenClash/core/dev/core_version
