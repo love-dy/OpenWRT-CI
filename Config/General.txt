@@ -25,11 +25,11 @@ CONFIG_PACKAGE_ip6tables=y
 CONFIG_PACKAGE_ip6tables-extra=y
 CONFIG_PACKAGE_ip6tables-mod-nat=y
 
-CONFIG_PACKAGE_ddns-scripts_cloudflare.com-v4=y
+CONFIG_PACKAGE_ddns-scripts_cloudflare.com-v4=n
 CONFIG_PACKAGE_nano=y
 
 # Kernel=>Filesystems
-CONFIG_PACKAGE_kmod-fs-ntfs=y
+CONFIG_PACKAGE_kmod-fs-ntfs=n
 
 # 增加插件(Le库插件, 默认已开启)
 CONFIG_PACKAGE_luci-app-arpbind=y
@@ -37,7 +37,7 @@ CONFIG_PACKAGE_luci-app-autoreboot=y
 CONFIG_PACKAGE_luci-app-ddns=y
 
 CONFIG_PACKAGE_luci-app-diskman=y
-CONFIG_PACKAGE_luci-app-diskman_INCLUDE_lsblk=y
+CONFIG_PACKAGE_luci-app-diskman_INCLUDE_lsblk=n
 
 CONFIG_PACKAGE_luci-app-filetransfer=y
 CONFIG_PACKAGE_luci-app-firewall=y
@@ -54,7 +54,6 @@ CONFIG_PACKAGE_luci-app-wireguard=y
 
 # 增加插件(Le库插件, 默认未开启)
 CONFIG_PACKAGE_luci-app-smartdns=y
-#CONFIG_PACKAGE_luci-app-webdav=y
 CONFIG_PACKAGE_luci-app-wrtbwmon=y
 
 # 删除插件(Le库插件, 默认已开启)
