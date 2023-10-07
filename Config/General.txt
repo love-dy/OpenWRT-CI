@@ -26,8 +26,11 @@ CONFIG_PACKAGE_ip6tables-extra=y
 CONFIG_PACKAGE_ip6tables-mod-nat=y
 
 # 增加组件(如果使用的是Luci19，请编译时选上"luci","luci-compat","luci-lib-ipkg")
+# LuCI -> Collections
 CONFIG_PACKAGE_luci=y
+# LuCI -> Modules
 CONFIG_PACKAGE_luci-compat=y
+# LuCI -> Libraries
 CONFIG_PACKAGE_luci-lib-ipkg=y
 
 # 增加组件
