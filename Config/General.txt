@@ -1,4 +1,4 @@
-# USB驱动
+# Kernel modules -> USB Support
 CONFIG_PACKAGE_kmod-usb2=y
 CONFIG_PACKAGE_kmod-usb3=y
 CONFIG_PACKAGE_kmod-usb-ohci=y
