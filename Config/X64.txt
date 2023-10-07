@@ -12,7 +12,7 @@ CONFIG_TARGET_IMAGES_GZIP=y
 # Extra packages
 CONFIG_PACKAGE_autocore-x86=y
 
-# 增加组件
+# Utilities
 CONFIG_PACKAGE_open-vm-tools=y
 CONFIG_PACKAGE_open-vm-tools-fuse=y
 
