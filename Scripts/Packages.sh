@@ -28,7 +28,7 @@ UPDATE_PACKAGE "argon" "jerrykuku/luci-theme-argon" "$([[ $WRT_URL == *"lede"* ]
 UPDATE_PACKAGE "argon-config" "jerrykuku/luci-app-argon-config" "$([[ $WRT_URL == *"lede"* ]] && echo "18.06" || echo "master")"
 
 UPDATE_PACKAGE "passwall" "xiaorouji/openwrt-passwall" "main"
-# UPDATE_PACKAGE "passwall2" "xiaorouji/openwrt-passwall2" "main"
+#UPDATE_PACKAGE "passwall2" "xiaorouji/openwrt-passwall2" "main"
 UPDATE_PACKAGE "passwall-packages" "xiaorouji/openwrt-passwall-packages" "main"
 UPDATE_PACKAGE "helloworld" "fw876/helloworld" "master"
 UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev"
@@ -59,4 +59,4 @@ UPDATE_VERSION() {
 	fi
 }
 
-UPDATE_VERSION "sing-box" "1.8.0" "80ae2a860fc77d961c578999e5fcfe964f969c81d9ccac156b2fef1340eca12f"
+UPDATE_VERSION "sing-box" "1.8.1" "6ea56eb52c2168f3d5ac98ab1bb758f109a411a5a897599e60eaecaf8f8fdcd9"
