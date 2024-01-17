@@ -70,7 +70,7 @@ CONFIG_PACKAGE_luci-app-wireguard=y
 CONFIG_PACKAGE_luci-app-smartdns=y
 CONFIG_PACKAGE_luci-app-wrtbwmon=y
 
-CONFIG_PACKAGE_luci-app-tinyfilemanager=y
+# CONFIG_PACKAGE_luci-app-tinyfilemanager=y
 
 # 删除插件(Le库插件, 默认已开启)
 CONFIG_PACKAGE_luci-app-accesscontrol=n
