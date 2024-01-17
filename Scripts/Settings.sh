@@ -32,8 +32,8 @@ echo "CONFIG_PACKAGE_luci-theme-$WRT_THEME=y" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-$WRT_THEME-config=y" >> ./.config
 
 #默认design主题，增加argon主题
-echo "CONFIG_PACKAGE_luci-theme-argon" >> ./.config
-echo "CONFIG_PACKAGE_luci-app-argon-config" >> ./.config
+#echo "CONFIG_PACKAGE_luci-theme-argon" >> ./.config
+#echo "CONFIG_PACKAGE_luci-app-argon-config" >> ./.config
 
 if [[ $WRT_URL == *"lede"* ]]; then
     #科学上网插件已在Config/General.txt中添加
