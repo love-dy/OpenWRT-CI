@@ -1,113 +1,44 @@
-# Target Images
-CONFIG_TARGET_ROOTFS_EXT4FS=n
-
-CONFIG_TARGET_KERNEL_PARTSIZE=128
-CONFIG_TARGET_ROOTFS_PARTSIZE=1024
-
-# Base system
-CONFIG_PACKAGE_blockd=y
-
-# Utilities -> Disc (解决 FAT32 中文乱码)
-# CONFIG_PACKAGE_fdisk=y
-
-# Extra packages
-CONFIG_PACKAGE_automount=y
-CONFIG_PACKAGE_autosamba=y
-
-# 开启IPV6
-# Extra packages
-CONFIG_PACKAGE_ipv6helper=y
-# Network -> Firewall -> ip6tables
-CONFIG_PACKAGE_ip6tables-extra=y
-CONFIG_PACKAGE_ip6tables-mod-nat=y
-
-# USB驱动
-# Kernel modules -> USB Support
+#USB驱动
 CONFIG_PACKAGE_kmod-usb2=y
 CONFIG_PACKAGE_kmod-usb3=y
 CONFIG_PACKAGE_kmod-usb-ohci=y
 CONFIG_PACKAGE_kmod-usb-uhci=y
-
-# 增加组件(如果使用的是Luci19，请编译时选上"luci","luci-compat","luci-lib-ipkg")
-# LuCI -> Collections
-CONFIG_PACKAGE_luci=y
-# LuCI -> Modules
+#增加参数
+CONFIG_TARGET_KERNEL_PARTSIZE=128
+CONFIG_TARGET_ROOTFS_PARTSIZE=1024
+#删除参数
+CONFIG_TARGET_ROOTFS_EXT4FS=n
+#增加组件
+CONFIG_DEVEL=y
+CONFIG_CCACHE=y
+CONFIG_PACKAGE_autocore=y
+CONFIG_PACKAGE_autosamba=y
+CONFIG_PACKAGE_htop=y
+CONFIG_PACKAGE_iperf3=y
+CONFIG_PACKAGE_ip-full=y
+CONFIG_PACKAGE_ipv6helper=y
+CONFIG_PACKAGE_ip6tables=y
+CONFIG_PACKAGE_ip6tables-extra=y
+CONFIG_PACKAGE_ip6tables-mod-nat=y
 CONFIG_PACKAGE_luci-compat=y
-# LuCI -> Libraries
 CONFIG_PACKAGE_luci-lib-ipkg=y
-
-# 增加组件
-# Network -> IP Addresses and Names
-CONFIG_PACKAGE_ddns-scripts_cloudflare.com-v4=y
-# Utilities -> Editors
-CONFIG_PACKAGE_nano=y
-# Kernel -> Filesystems
-CONFIG_PACKAGE_kmod-fs-ntfs=y
-
-# 增加插件(Le库插件, 默认已开启)
-# LuCI -> Applications
-CONFIG_PACKAGE_luci-app-arpbind=y
-CONFIG_PACKAGE_luci-app-autoreboot=y
-CONFIG_PACKAGE_luci-app-ddns=y
-CONFIG_PACKAGE_luci-app-diskman=y
-CONFIG_PACKAGE_luci-app-diskman_INCLUDE_lsblk=y
-CONFIG_PACKAGE_luci-app-filetransfer=y
-CONFIG_PACKAGE_luci-app-firewall=y
-CONFIG_PACKAGE_luci-app-nlbwmon=y
-CONFIG_PACKAGE_luci-app-samba4=y
-CONFIG_PACKAGE_luci-app-ttyd=y
-CONFIG_PACKAGE_luci-app-turboacc=y
-CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_OFFLOADING=y
+#增加插件，科学上网插件请在Scripts/Settings.sh调整
 CONFIG_PACKAGE_luci-app-upnp=y
-CONFIG_PACKAGE_luci-app-vlmcsd=y
-CONFIG_PACKAGE_luci-app-wireguard=y
-CONFIG_PACKAGE_luci-app-vsftpd=y
-CONFIG_PACKAGE_luci-app-wol=y
-
-# 增加插件(Le库插件, 默认未开启)
-CONFIG_PACKAGE_luci-app-smartdns=y
-CONFIG_PACKAGE_luci-app-wrtbwmon=y
-CONFIG_PACKAGE_luci-app-hd-idle=y
-# CONFIG_PACKAGE_luci-app-minidlna=y
-
-# 增加插件(Le库以外的插件)
-CONFIG_PACKAGE_luci-app-adguardhome=y
-# CONFIG_PACKAGE_luci-app-tinyfilemanager=y
-
-# 增加插件(科学上网插件，请在Scripts/Settings.sh调整)
-# CONFIG_PACKAGE_luci-app-openclash=y
-
-# CONFIG_PACKAGE_luci-app-passwall=y
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=y
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy=y
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_tuic_client=y
-
-# CONFIG_PACKAGE_luci-app-passwall2=y
-# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Hysteria=y
-# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_NaiveProxy=y
-
-# CONFIG_PACKAGE_luci-app-ssr-plus=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Hysteria=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_TUIC-Client=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NaiveProxy=y
-
-# Linkease(Le库以外的插件)
-# istore应用商店
-# CONFIG_PACKAGE_luci-app-store=y
-# 易有云文件管理器
-# CONFIG_PACKAGE_luci-app-linkease=y
-# 统一文件共享
-# CONFIG_PACKAGE_luci-app-unishare=y
-# 首页和网络向导
-# CONFIG_PACKAGE_luci-app-quickstart=y
-# CONFIG_PACKAGE_luci-app-istorex=y
-
-# 删除插件(Le库插件, 默认已开启)
-CONFIG_PACKAGE_luci-app-accesscontrol=n
-CONFIG_PACKAGE_luci-app-adbyby-plus=n
-CONFIG_PACKAGE_luci-app-ipsec-vpnd=n
-CONFIG_PACKAGE_luci-app-unblockmusic=n
+CONFIG_PACKAGE_luci-app-diskman=y
+CONFIG_PACKAGE_luci-app-turboacc=y
+CONFIG_PACKAGE_luci-app-autoreboot=y
+CONFIG_PACKAGE_luci-app-uugamebooster=y
+CONFIG_PACKAGE_luci-app-tinyfilemanager=y
+#删除插件
+CONFIG_PACKAGE_luci-app-wol=n
+CONFIG_PACKAGE_luci-app-ddns=n
+CONFIG_PACKAGE_luci-app-vlmcsd=n
 CONFIG_PACKAGE_luci-app-xlnetacc=n
 CONFIG_PACKAGE_luci-app-zerotier=n
-
-# END
+CONFIG_PACKAGE_luci-app-wireguard=n
+CONFIG_PACKAGE_luci-app-ipsec-vpnd=n
+CONFIG_PACKAGE_luci-app-adbyby-plus=n
+CONFIG_PACKAGE_luci-app-filetransfer=n
+CONFIG_PACKAGE_luci-app-unblockmusic=n
+CONFIG_PACKAGE_luci-app-accesscontrol=n
+CONFIG_PACKAGE_luci-app-fileassistant=n
