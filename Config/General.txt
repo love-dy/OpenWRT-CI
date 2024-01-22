@@ -81,7 +81,7 @@ CONFIG_PACKAGE_luci-app-zerotier=n
 CONFIG_PACKAGE_luci-app-adguardhome=y
 # CONFIG_PACKAGE_luci-app-tinyfilemanager=y
 
-# 增加插件(科学上网插件，请在Scripts/Settings.sh调整)
+# 增加插件(科学上网插件，在Scripts/Settings.sh中添加)
 # CONFIG_PACKAGE_luci-app-passwall=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=y
 # CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy=y
