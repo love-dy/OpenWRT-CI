@@ -35,6 +35,10 @@ UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev"
 
 UPDATE_PACKAGE "adguardhome" "rufengsuixing/luci-app-adguardhome" "master"
 
+#UPDATE_PACKAGE "istore" "linkease/istore" "main"
+#UPDATE_PACKAGE "nas-packages" "linkease/nas-packages" "master"
+#UPDATE_PACKAGE "nas-packages-luci" "linkease/nas-packages-luci" "main"
+
 if [[ $WRT_URL == *"immortalwrt"* ]]; then
 	UPDATE_PACKAGE "homeproxy" "immortalwrt/homeproxy" "dev"
 fi
