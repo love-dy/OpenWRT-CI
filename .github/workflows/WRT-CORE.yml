@@ -62,7 +62,7 @@ jobs:
           sudo -E apt -yqq full-upgrade
           sudo -E apt -yqq install $(sed -n "2{s/\r$//g;p;q}" $GITHUB_WORKSPACE/Depends.txt)
           sudo -E add-apt-repository -y ppa:ubuntu-toolchain-r/test
-          sudo -E apt-get -yqq install gcc-9 g++-9
+          sudo -E apt-get -y install gcc-9 g++-9
           sudo -E update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-9 --slave /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-9 --slave /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-9          
           sudo -E apt -yqq autoremove --purge
           sudo -E apt -yqq autoclean
