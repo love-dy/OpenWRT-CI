@@ -25,13 +25,13 @@ UPDATE_PACKAGE "design-config" "gngpp/luci-app-design-config" "master"
 UPDATE_PACKAGE "argon" "jerrykuku/luci-theme-argon" "$([[ $WRT_URL == *"lede"* ]] && echo "18.06" || echo "master")"
 UPDATE_PACKAGE "argon-config" "jerrykuku/luci-app-argon-config" "$([[ $WRT_URL == *"lede"* ]] && echo "18.06" || echo "master")"
 
-#UPDATE_PACKAGE "passwall" "xiaorouji/openwrt-passwall" "main"
+UPDATE_PACKAGE "passwall" "xiaorouji/openwrt-passwall" "main"
 #UPDATE_PACKAGE "passwall2" "xiaorouji/openwrt-passwall2" "main"
-#UPDATE_PACKAGE "passwall-packages" "xiaorouji/openwrt-passwall-packages" "main"
-#UPDATE_PACKAGE "helloworld" "fw876/helloworld" "master"
+UPDATE_PACKAGE "passwall-packages" "xiaorouji/openwrt-passwall-packages" "main"
+UPDATE_PACKAGE "helloworld" "fw876/helloworld" "master"
 
 #UPDATE_PACKAGE "kenzo" "kenzok8/small" "master"
-UPDATE_PACKAGE "kenzo" "love-dy/small" "master"
+#UPDATE_PACKAGE "kenzo" "love-dy/small" "master"
 
 UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev"
 
@@ -67,4 +67,5 @@ UPDATE_VERSION() {
 	fi
 }
 
-UPDATE_VERSION "sing-box" "1.8.5" "0d5e6a7198c3a18491ac35807170715118df2c7b77fd02d16d7cfb5791e368ce"
+#UPDATE_VERSION "sing-box" "1.8.5" "0d5e6a7198c3a18491ac35807170715118df2c7b77fd02d16d7cfb5791e368ce"
+UPDATE_VERSION "sing-box" "1.8.8" "dfa64c1da309000998ff9c5fb35bac2795c9e88ce3c63ad47862ba6c3aeda74f"
