@@ -53,7 +53,7 @@ UPDATE_VERSION() {
 
 	if [ -f "$PKG_FILE" ]; then
 		local OLD_VER=$(grep -Po "PKG_VERSION:=\K.*" $PKG_FILE)
-		local NEW_VER=$(git ls-remote --tags --sort="version:refname" "https://github.com/$PKG_REPO.git" | tail -n 1 | sed "s/.*\/v//")
+		local NEW_VER=$(git ls-remote --tags --sort="version:refname" "https://github.com/$PKG_REPO.git" | tail -n 1 | sed "s/.*v//")
 		local NEW_HASH=$(curl -sfL "https://codeload.github.com/$PKG_REPO/tar.gz/v$NEW_VER" | sha256sum | cut -b -64)
 
 		if dpkg --compare-versions "$OLD_VER" lt "$NEW_VER"; then
@@ -69,5 +69,3 @@ UPDATE_VERSION() {
 }
 
 UPDATE_VERSION "sing-box" "SagerNet/sing-box"
-
-UPDATE_VERSION "sing-box" "1.9.0-rc.14" "9fa23bcd8953a43d5ebb8bc881c861ab9b922272e1aa47b2fc76b032b8a27067"
