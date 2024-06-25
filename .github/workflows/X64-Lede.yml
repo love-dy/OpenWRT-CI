@@ -7,6 +7,12 @@ on:
   #  - cron: 0 20 * * *
   #手动编译
   workflow_dispatch:
+    inputs:
+      TEST:
+        description: '仅输出配置文件，不编译固件。'
+        default: 'false'
+        required: false
+        type: boolean
 
 #CI权限
 permissions: write-all
@@ -26,10 +32,12 @@ jobs:
       #默认WIFI名
       WRT_WIFI: OpenWrt
       #默认密码，仅作提示，修改无用
-      WRT_PW: password
+      WRT_PW: 无
       #默认地址
       WRT_IP: 192.168.2.251
       #默认源码
       WRT_URL: https://github.com/coolsnowwolf/lede.git
       #默认分支
       WRT_BRANCH: master
+      #仅输出配置文件
+      WRT_TEST: ${{inputs.TEST || 'false'}}

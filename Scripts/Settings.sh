@@ -31,7 +31,7 @@ else
 	mv -f ../Patches/chinadns-ng/Makefile ./feeds/packages/net/chinadns-ng/
 fi
 
-#配置文件修改
+#默认主题修改
 #echo "CONFIG_PACKAGE_luci-theme-$WRT_THEME=y" >> ./.config
 #echo "CONFIG_PACKAGE_luci-app-$WRT_THEME-config=y" >> ./.config
 
@@ -47,18 +47,17 @@ if [[ $WRT_URL == *"lede"* ]]; then
 	echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=y" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy=y" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_tuic_client=y" >> ./.config
+	
 	echo "CONFIG_PACKAGE_luci-app-ssr-plus=y" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Hysteria=y" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Tuic_Client=y" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NaiveProxy=y" >> ./.config
+	
 	echo "CONFIG_PACKAGE_luci-app-openclash=y" >> ./.config	
 else
 	echo "CONFIG_PACKAGE_luci=y" >> ./.config
 	echo "CONFIG_LUCI_LANG_zh_Hans=y" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-homeproxy=y" >> ./.config
+	echo "CONFIG_PACKAGE_luci-app-mihomo=y" >> ./.config
 fi
 
-#取消高通平台的autosamba
-if [[ $WRT_TARGET == "Qualcom" ]]; then
-	sed -i "s/CONFIG_PACKAGE_autosamba=y/CONFIG_PACKAGE_autosamba=n/g" ./.config
-fi
