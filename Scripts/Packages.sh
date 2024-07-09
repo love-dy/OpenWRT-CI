@@ -8,7 +8,7 @@ UPDATE_PACKAGE() {
 	local PKG_SPECIAL=$4
 	local REPO_NAME=$(echo $PKG_REPO | cut -d '/' -f 2)
 
-	rm -rf $(find ../feeds/luci/ -maxdepth 3 -type d -iname "*$PKG_NAME*" -prune)
+	rm -rf $(find ../feeds/luci/ ../feeds/packages/ -maxdepth 3 -type d -iname "*$PKG_NAME*" -prune)
 
 	git clone --depth=1 --single-branch --branch $PKG_BRANCH "https://github.com/$PKG_REPO.git"
 
@@ -20,6 +20,7 @@ UPDATE_PACKAGE() {
 	fi
 }
 
+#UPDATE_PACKAGE "包名" "项目地址" "项目分支" "pkg/name，可选，pkg为从大杂烩中单独提取包名插件；name为重命名为包名"
 UPDATE_PACKAGE "design" "gngpp/luci-theme-design" "$([[ $WRT_URL == *"lede"* ]] && echo "main" || echo "js")"
 UPDATE_PACKAGE "design-config" "gngpp/luci-app-design-config" "master"
 UPDATE_PACKAGE "argon" "jerrykuku/luci-theme-argon" "$([[ $WRT_URL == *"lede"* ]] && echo "18.06" || echo "master")"
@@ -41,8 +42,12 @@ UPDATE_PACKAGE "adguardhome" "rufengsuixing/luci-app-adguardhome" "master"
 #UPDATE_PACKAGE "nas-packages-luci" "linkease/nas-packages-luci" "main"
 
 if [[ $WRT_URL != *"lede"* ]]; then
-	UPDATE_PACKAGE "homeproxy" "immortalwrt/homeproxy" "dev"
+	UPDATE_PACKAGE "homeproxy" "VIKINGYFY/homeproxy" "dev"
 	UPDATE_PACKAGE "mihomo" "morytyann/OpenWrt-mihomo" "main" "pkg"
+fi
+
+if [[ $WRT_URL == *"openwrt-6.x"* ]]; then
+	UPDATE_PACKAGE "qmi-wwan" "immortalwrt/wwan-packages" "master" "pkg"
 fi
 
 #更新软件包版本
@@ -80,23 +85,5 @@ UPDATE_VERSION() {
     done
 }
 
-#UPDATE_VERSION "软件包名" "项目地址" "测试版true（可选，默认为否）"
-UPDATE_VERSION "brook" "txthinking/brook"
-UPDATE_VERSION "dns2tcp" "zfl9/dns2tcp"
-UPDATE_VERSION "hysteria" "apernet/hysteria"
-UPDATE_VERSION "ipt2socks" "zfl9/ipt2socks"
-UPDATE_VERSION "microsocks" "rofl0r/microsocks"
-UPDATE_VERSION "mihomo" "metacubex/mihomo"
-UPDATE_VERSION "mosdns" "IrineSistiana/mosdns"
-UPDATE_VERSION "naiveproxy" "klzgrad/naiveproxy"
-UPDATE_VERSION "neturl" "golgote/neturl"
-UPDATE_VERSION "shadowsocks-rust" "shadowsocks/shadowsocks-rust"
+#UPDATE_VERSION "软件包名" "项目地址" "测试版，true，可选，默认为否"
 UPDATE_VERSION "sing-box" "SagerNet/sing-box" "true"
-UPDATE_VERSION "tcping" "Mattraks/tcping"
-UPDATE_VERSION "trojan-go" "p4gefau1t/trojan-go"
-UPDATE_VERSION "trojan" "trojan-gfw/trojan"
-UPDATE_VERSION "v2ray-core" "v2fly/v2ray-core"
-UPDATE_VERSION "v2ray-plugin" "teddysun/v2ray-plugin"
-UPDATE_VERSION "v2rayA" "v2rayA/v2rayA"
-UPDATE_VERSION "xray-core" "XTLS/Xray-core"
-UPDATE_VERSION "xray-plugin" "teddysun/xray-plugin"

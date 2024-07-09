@@ -28,8 +28,10 @@ on:
       WRT_PW:
         required: true
         type: string
+      WRT_PACKAGE:
+        required: false
+        type: string
       WRT_TEST:
-        default: 'false'
         required: false
         type: string
 
@@ -43,6 +45,7 @@ env:
   WRT_URL: ${{inputs.WRT_URL}}
   WRT_IP: ${{inputs.WRT_IP}}
   WRT_PW: ${{inputs.WRT_PW}}
+  WRT_PACKAGE: ${{inputs.WRT_PACKAGE}}
   WRT_TEST: ${{inputs.WRT_TEST}}
 
 jobs:
@@ -120,7 +123,7 @@ jobs:
         id: check-cache
         uses: actions/cache@main
         with:
-          key: ${{env.WRT_TARGET}}-${{env.WRT_SOURCE}}-${{env.WRT_HASH}}
+          key: ${{env.WRT_TARGET}}-${{env.WRT_SOURCE}}-${{env.WRT_BRANCH}}-${{env.WRT_HASH}}
           path: |
             ./wrt/.ccache
             ./wrt/staging_dir/host*
@@ -165,7 +168,7 @@ jobs:
 
           rm -rf ./tmp* ./.config*
 
-          cat $GITHUB_WORKSPACE/Config/$WRT_TARGET.txt $GITHUB_WORKSPACE/Config/General.txt >> .config
+          cat $GITHUB_WORKSPACE/Config/$WRT_TARGET.txt $GITHUB_WORKSPACE/Config/GENERAL.txt >> .config
 
           $GITHUB_WORKSPACE/Scripts/Settings.sh
 
@@ -221,14 +224,18 @@ jobs:
       - name: Release Firmware
         uses: softprops/action-gh-release@master
         with:
-          tag_name: ${{env.WRT_TARGET}}_${{env.WRT_SOURCE}}_${{env.WRT_DATE}}
+          tag_name: ${{env.WRT_TARGET}}_${{env.WRT_SOURCE}}_${{env.WRT_BRANCH}}_${{env.WRT_DATE}}
           files: ./wrt/upload/*.*
           body: |
             这是个平台固件包，内含多个设备！
             请注意选择你需要的设备固件！
+            不要问，刷就完事了！
 
-            源码：${{env.WRT_SOURCE}}
+            MTK和QCA全系带开源硬件加速，别问了！
+
+            源码：${{env.WRT_URL}}
+            分支：${{env.WRT_BRANCH}}
             平台：${{env.WRT_TARGET}}
             设备：${{env.WRT_TYPE}}
-            密码：${{env.WRT_PW}}
             地址：${{env.WRT_IP}}
+            密码：${{env.WRT_PW}}
