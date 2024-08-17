@@ -173,7 +173,7 @@ jobs:
 
           rm -rf ./tmp* ./.config*
 
-          cat $GITHUB_WORKSPACE/Config/$WRT_TARGET.txt $GITHUB_WORKSPACE/Config/GENERAL.txt >> .config
+          cat $GITHUB_WORKSPACE/Config/$WRT_TARGET.txt $GITHUB_WORKSPACE/Config/General.txt >> .config
 
           $GITHUB_WORKSPACE/Scripts/Settings.sh
 
@@ -234,7 +234,6 @@ jobs:
           body: |
             这是个平台固件包，内含多个设备！
             请注意选择你需要的设备固件！
-            不要问，刷就完事了！
 
             MTK和QCA全系带开源硬件加速，别问了！
 
