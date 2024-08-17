@@ -32,11 +32,9 @@ jobs:
       matrix:
         include:
           - TARGET: [Rockchip, X86]
-            SOURCE: coolsnowwolf/lede
-            BRANCH: master
+            SOURCE: [coolsnowwolf/lede]
           - TARGET: [Rockchip, X86]
-            SOURCE: immortalwrt/immortalwrt
-            BRANCH: master
+            SOURCE: [immortalwrt/immortalwrt]
 
     #调用公用编译核心WRT-CORE.yml
     uses: ./.github/workflows/WRT-CORE.yml
