@@ -14,50 +14,44 @@ sed -i "s/hostname='.*'/hostname='$WRT_NAME'/g" $CFG_FILE
 sed -i "s/timezone='.*'/timezone='CST-8'/g" $CFG_FILE
 sed -i "/timezone='.*'/a\\\t\t\set system.@system[-1].zonename='Asia/Shanghai'" $CFG_FILE
 
-if [[ $WRT_URL == *"lede"* ]]; then
+if [[ $WRT_REPO == *"lede"* ]]; then
 	LEDE_FILE=$(find ./package/lean/autocore/ -type f -name "index.htm")
 	#修改默认时间格式
 	sed -i 's/os.date()/os.date("%Y-%m-%d %H:%M:%S %A")/g' $LEDE_FILE
 	#添加编译日期标识
-	sed -i "s/(\(<%=pcdata(ver.luciversion)%>\))/\1 \/ $WRT_REPO-$WRT_DATE/g" $LEDE_FILE
+	sed -i "s/(\(<%=pcdata(ver.luciversion)%>\))/\1 \/ $WRT_CI-$WRT_DATE/g" $LEDE_FILE
 else
 	#修改immortalwrt.lan关联IP
 	sed -i "s/192\.168\.[0-9]*\.[0-9]*/$WRT_IP/g" $(find ./feeds/luci/modules/luci-mod-system/ -type f -name "flash.js")
 	#添加编译日期标识
-	sed -i "s/(\(luciversion || ''\))/(\1) + (' \/ $WRT_REPO-$WRT_DATE')/g" $(find ./feeds/luci/modules/luci-mod-status/ -type f -name "10_system.js")
+	sed -i "s/(\(luciversion || ''\))/(\1) + (' \/ $WRT_CI-$WRT_DATE')/g" $(find ./feeds/luci/modules/luci-mod-status/ -type f -name "10_system.js")
 fi
 
-#默认主题修改
-#echo "CONFIG_PACKAGE_luci-theme-$WRT_THEME=y" >> ./.config
-#echo "CONFIG_PACKAGE_luci-app-$WRT_THEME-config=y" >> ./.config
-
-#添加主题
-echo "CONFIG_PACKAGE_luci-theme-design=y" >> .config
-echo "CONFIG_PACKAGE_luci-app-design-config=y" >> .config
-echo "CONFIG_PACKAGE_luci-theme-argon=y" >> .config
-echo "CONFIG_PACKAGE_luci-app-argon-config=y" >> .config
+#配置文件修改
+echo "CONFIG_PACKAGE_luci-theme-$WRT_THEME=y" >> ./.config
+echo "CONFIG_PACKAGE_luci-app-$WRT_THEME-config=y" >> ./.config
 
 #手动调整的插件
 if [ -n "$WRT_PACKAGE" ]; then
 	echo "$WRT_PACKAGE" >> ./.config
 fi
 
-#添加科学上网插件
-if [[ $WRT_URL == *"lede"* ]]; then
+#高通平台锁定512M内存
+if [[ $WRT_TARGET == *"IPQ"* ]]; then
+	echo "CONFIG_IPQ_MEM_PROFILE_1024=n" >> ./.config
+	echo "CONFIG_IPQ_MEM_PROFILE_512=y" >> ./.config
+	echo "CONFIG_ATH11K_MEM_PROFILE_1G=n" >> ./.config
+	echo "CONFIG_ATH11K_MEM_PROFILE_512M=y" >> ./.config
+fi
+
+#科学插件设置
+if [[ $WRT_REPO == *"lede"* ]]; then
+	echo "CONFIG_PACKAGE_luci-app-openclash=y" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-passwall=y" >> ./.config
-	echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=y" >> ./.config
-	echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy=y" >> ./.config
-	echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_tuic_client=y" >> ./.config
-	
 	echo "CONFIG_PACKAGE_luci-app-ssr-plus=y" >> ./.config
-	echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Hysteria=y" >> ./.config
-	echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Tuic_Client=y" >> ./.config
-	echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NaiveProxy=y" >> ./.config
-	
-	echo "CONFIG_PACKAGE_luci-app-openclash=y" >> ./.config	
+	echo "CONFIG_PACKAGE_luci-app-turboacc=y" >> ./.config
 else
 	echo "CONFIG_PACKAGE_luci=y" >> ./.config
 	echo "CONFIG_LUCI_LANG_zh_Hans=y" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-homeproxy=y" >> ./.config
 fi
-
