@@ -60,6 +60,7 @@ if [[ $WRT_REPO == *"lede"* ]]; then
 	
 	echo "CONFIG_PACKAGE_luci-app-turboacc=y" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_OFFLOADING=y" >> ./.config
+	echo "CONFIG_PACKAGE_luci-app-vlmcsd=y" >> ./.config
 else
 	echo "CONFIG_PACKAGE_luci=y" >> ./.config
 	echo "CONFIG_LUCI_LANG_zh_Hans=y" >> ./.config
