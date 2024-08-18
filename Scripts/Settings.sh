@@ -28,14 +28,14 @@ else
 fi
 
 #配置文件修改
-#echo "CONFIG_PACKAGE_luci-theme-$WRT_THEME=y" >> ./.config
-#echo "CONFIG_PACKAGE_luci-app-$WRT_THEME-config=y" >> ./.config
+echo "CONFIG_PACKAGE_luci-theme-$WRT_THEME=y" >> ./.config
+echo "CONFIG_PACKAGE_luci-app-$WRT_THEME-config=y" >> ./.config
 
 #添加主题
-echo "CONFIG_PACKAGE_luci-theme-design=y" >> .config
-echo "CONFIG_PACKAGE_luci-app-design-config=y" >> .config
-echo "CONFIG_PACKAGE_luci-theme-argon=y" >> .config
-echo "CONFIG_PACKAGE_luci-app-argon-config=y" >> .config
+#echo "CONFIG_PACKAGE_luci-theme-design=y" >> .config
+#echo "CONFIG_PACKAGE_luci-app-design-config=y" >> .config
+#echo "CONFIG_PACKAGE_luci-theme-argon=y" >> .config
+#echo "CONFIG_PACKAGE_luci-app-argon-config=y" >> .config
 
 #手动调整的插件
 if [ -n "$WRT_PACKAGE" ]; then
@@ -53,6 +53,7 @@ fi
 #科学插件设置
 if [[ $WRT_REPO == *"lede"* ]]; then
 	echo "CONFIG_PACKAGE_luci-app-openclash=y" >> ./.config
+	echo "CONFIG_PACKAGE_luci-app-adguardhome=y" >> ./.config	
 	
 	echo "CONFIG_PACKAGE_luci-app-passwall=y" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=y" >> ./.config
