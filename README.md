@@ -1,11 +1,11 @@
 # OpenWRT-CI
 云编译OpenWRT固件
 
-官方版：
-https://github.com/immortalwrt/immortalwrt.git
+LEDE源码：
+https://github.com/coolsnowwolf/lede
 
-高通版：
-https://github.com/VIKINGYFY/immortalwrt.git
+IMMORTALWRT源码：
+https://github.com/immortalwrt/immortalwrt
 
 # 固件简要说明：
 
@@ -13,9 +13,11 @@ https://github.com/VIKINGYFY/immortalwrt.git
 
 固件信息里的时间为编译开始的时间，方便核对上游源码提交时间。
 
-MEDIATEK系列、QUALCOMMAX系列、ROCKCHIP系列、X86系列。
+ROCKCHIP系列、MEDIATEK系列、X64系列。
 
 # 目录简要说明：
+
+Depends.txt——环境依赖列表
 
 workflows——自定义CI配置
 
