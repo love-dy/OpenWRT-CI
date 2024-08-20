@@ -53,7 +53,6 @@ fi
 
 #添加插件
 echo "CONFIG_PACKAGE_luci-app-adguardhome=y" >> ./.config
-echo "CONFIG_PACKAGE_luci-app-ddns-go=y" >> ./.config
 
 #科学插件设置
 if [[ $WRT_REPO != *"lede"* ]]; then
@@ -70,5 +69,3 @@ echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Hysteria=y" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NaiveProxy=y" >> ./.config
 
 echo "CONFIG_PACKAGE_luci-app-openclash=y" >> ./.config	
-echo "CONFIG_PACKAGE_luci-app-adguardhome=y" >> ./.config
-
