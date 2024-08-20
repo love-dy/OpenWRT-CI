@@ -31,14 +31,7 @@ UPDATE_PACKAGE "design-config" "0x676e67/luci-app-design-config" "master"
 
 UPDATE_PACKAGE "small" "kenzok8/small" "master"
 UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
-
 UPDATE_PACKAGE "adguardhome" "rufengsuixing/luci-app-adguardhome" "master"
-UPDATE_PACKAGE "ddns-go" "sirpdboy/luci-app-ddns-go" "main"
-
-#UPDATE_PACKAGE "advancedplus" "VIKINGYFY/luci-app-advancedplus" "main"
-#UPDATE_PACKAGE "gecoosac" "lwb1978/openwrt-gecoosac" "main"
-#UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
-#UPDATE_PACKAGE "luci-app-wolplus" "animegasan/luci-app-wolplus" "main"
 
 
 if [[ $WRT_REPO != *"lede"* ]]; then
