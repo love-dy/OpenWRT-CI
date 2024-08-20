@@ -27,6 +27,8 @@ UPDATE_PACKAGE "argon" "jerrykuku/luci-theme-argon" "$([[ $WRT_REPO == *"lede"* 
 #UPDATE_PACKAGE "ssr-plus" "fw876/helloworld" "master"
 
 UPDATE_PACKAGE "small" "kenzok8/small" "master"
+UPDATE_PACKAGE "openwrt-packages" "kenzok8/openwrt-packages" "master"
+
 UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
 UPDATE_PACKAGE "adguardhome" "rufengsuixing/luci-app-adguardhome" "master"
 
