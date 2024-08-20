@@ -45,18 +45,7 @@ if [[ $WRT_TARGET == *"IPQ"* ]]; then
 fi
 
 #科学插件设置
-if [[ $WRT_REPO == *"lede"* ]]; then
-	echo "CONFIG_PACKAGE_luci-app-passwall=y" >> ./.config
-	echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=y" >> ./.config
-	echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy=y" >> ./.config
-	
-	echo "CONFIG_PACKAGE_luci-app-ssr-plus=y" >> ./.config
-	echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Hysteria=y" >> ./.config
-	echo "CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NaiveProxy=y" >> ./.config
-	
-	echo "CONFIG_PACKAGE_luci-app-openclash=y" >> ./.config	
-	echo "CONFIG_PACKAGE_luci-app-adguardhome=y" >> ./.config
-else
+if [[ $WRT_REPO != *"lede"* ]]; then
 	echo "CONFIG_PACKAGE_luci=y" >> ./.config
 	echo "CONFIG_LUCI_LANG_zh_Hans=y" >> ./.config
 	echo "CONFIG_PACKAGE_luci-app-homeproxy=y" >> ./.config
