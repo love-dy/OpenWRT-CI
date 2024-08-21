@@ -22,9 +22,9 @@ UPDATE_PACKAGE() {
 
 #UPDATE_PACKAGE "包名" "项目地址" "项目分支" "pkg/name，可选，pkg为从大杂烩中单独提取包名插件；name为重命名为包名"
 UPDATE_PACKAGE "argon" "jerrykuku/luci-theme-argon" "$([[ $WRT_REPO == *"lede"* ]] && echo "18.06" || echo "master")"
-UPDATE_PACKAGE "argon-config" "jerrykuku/luci-app-argon-config" "$([[ $WRT_REPO == *"lede"* ]] && echo "18.06" || echo "master")"
+#UPDATE_PACKAGE "argon-config" "jerrykuku/luci-app-argon-config" "$([[ $WRT_REPO == *"lede"* ]] && echo "18.06" || echo "master")"
 UPDATE_PACKAGE "design" "0x676e67/luci-theme-design" "$([[ $WRT_REPO == *"lede"* ]] && echo "main" || echo "js")"
-UPDATE_PACKAGE "design-config" "0x676e67/luci-app-design-config" "master"
+#UPDATE_PACKAGE "design-config" "0x676e67/luci-app-design-config" "master"
 
 #UPDATE_PACKAGE "passwall" "xiaorouji/openwrt-passwall" "main"
 #UPDATE_PACKAGE "ssr-plus" "fw876/helloworld" "master"
@@ -36,9 +36,6 @@ UPDATE_PACKAGE "adguardhome" "rufengsuixing/luci-app-adguardhome" "master"
 UPDATE_PACKAGE "homeproxy" "VIKINGYFY/homeproxy" "main"
 #UPDATE_PACKAGE "daed" "QiuSimons/luci-app-daed" "master"
 #UPDATE_PACKAGE "mihomo" "morytyann/OpenWrt-mihomo" "main" "pkg"
-	
-UPDATE_PACKAGE "alpha" "derisamedia/luci-theme-alpha" "master"
-UPDATE_PACKAGE "alpha-config" "animegasan/luci-app-alpha-config" "master"	
 
 
 #更新软件包版本
