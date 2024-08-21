@@ -32,11 +32,8 @@ fi
 #echo "CONFIG_PACKAGE_luci-app-$WRT_THEME-config=y" >> ./.config
 
 echo "CONFIG_PACKAGE_luci-theme-argon=y" >> .config
-echo "CONFIG_PACKAGE_luci-app-argon-config=y" >> .config
 echo "CONFIG_PACKAGE_luci-theme-design=y" >> .config
-echo "CONFIG_PACKAGE_luci-app-design-config=y" >> .config
-echo "CONFIG_PACKAGE_luci-theme-alpha=y" >> .config
-echo "CONFIG_PACKAGE_luci-app-alpha-config=y" >> .config
+
 
 #手动调整的插件
 if [ -n "$WRT_PACKAGE" ]; then
