@@ -33,15 +33,12 @@ UPDATE_PACKAGE "small" "kenzok8/small" "master"
 UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
 UPDATE_PACKAGE "adguardhome" "rufengsuixing/luci-app-adguardhome" "master"
 
-
-if [[ $WRT_REPO != *"lede"* ]]; then
-	UPDATE_PACKAGE "homeproxy" "VIKINGYFY/homeproxy" "main"
-	#UPDATE_PACKAGE "daed" "QiuSimons/luci-app-daed" "master"
-	#UPDATE_PACKAGE "mihomo" "morytyann/OpenWrt-mihomo" "main" "pkg"
+UPDATE_PACKAGE "homeproxy" "VIKINGYFY/homeproxy" "main"
+#UPDATE_PACKAGE "daed" "QiuSimons/luci-app-daed" "master"
+#UPDATE_PACKAGE "mihomo" "morytyann/OpenWrt-mihomo" "main" "pkg"
 	
-	UPDATE_PACKAGE "alpha" "derisamedia/luci-theme-alpha" "master"
-	UPDATE_PACKAGE "alpha-config" "animegasan/luci-app-alpha-config" "master"	
-fi
+UPDATE_PACKAGE "alpha" "derisamedia/luci-theme-alpha" "master"
+UPDATE_PACKAGE "alpha-config" "animegasan/luci-app-alpha-config" "master"	
 
 
 #更新软件包版本
