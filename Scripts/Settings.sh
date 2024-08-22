@@ -47,6 +47,8 @@ fi
 
 #添加插件
 echo "CONFIG_PACKAGE_luci-app-adguardhome=y" >> ./.config
+echo "CONFIG_PACKAGE_luci=y" >> ./.config
+echo "CONFIG_LUCI_LANG_zh_Hans=y" >> ./.config
 
 #科学插件设置
 echo "CONFIG_PACKAGE_luci-app-passwall=y" >> ./.config
