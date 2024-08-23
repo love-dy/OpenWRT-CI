@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #修改默认主题
-#sed -i "s/luci-theme-bootstrap/luci-theme-$WRT_THEME/g" $(find ./feeds/luci/collections/ -type f -name "Makefile")
+sed -i "s/luci-theme-bootstrap/luci-theme-$WRT_THEME/g" $(find ./feeds/luci/collections/ -type f -name "Makefile")
 #修改默认WIFI名
 sed -i "s/\.ssid=.*/\.ssid=$WRT_WIFI/g" $(find ./package/kernel/mac80211/ ./package/network/config/ -type f -name "mac80211.*")
 
@@ -29,7 +29,7 @@ fi
 
 #配置主题
 echo "CONFIG_PACKAGE_luci-theme-$WRT_THEME=y" >> ./.config
-echo "CONFIG_PACKAGE_luci-app-$WRT_THEME-config=y" >> ./.config
+#echo "CONFIG_PACKAGE_luci-app-$WRT_THEME-config=y" >> ./.config
 
 
 #手动调整的插件
@@ -46,14 +46,14 @@ if [[ $WRT_TARGET == *"IPQ"* ]]; then
 fi
 
 #添加插件
-#echo "CONFIG_PACKAGE_luci-app-adguardhome=y" >> ./.config
 echo "CONFIG_PACKAGE_luci=y" >> ./.config
 echo "CONFIG_LUCI_LANG_zh_Hans=y" >> ./.config
+echo "CONFIG_PACKAGE_luci-app-homeproxy=y" >> ./.config
 
 #科学插件设置
 #echo "CONFIG_PACKAGE_luci-app-passwall=y" >> ./.config
 #echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=y" >> ./.config
 #echo "CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy=y" >> ./.config
 
-echo "CONFIG_PACKAGE_luci-app-homeproxy=y" >> ./.config
 #echo "CONFIG_PACKAGE_luci-app-openclash=y" >> ./.config		
+#echo "CONFIG_PACKAGE_luci-app-adguardhome=y" >> ./.config
