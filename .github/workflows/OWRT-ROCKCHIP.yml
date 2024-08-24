@@ -33,7 +33,7 @@ jobs:
       #默认主题
       WRT_THEME: argon
       #默认主机名
-      WRT_NAME: OpenWrt
+      WRT_NAME: Rockchip
       #默认WIFI名
       WRT_WIFI: OWRT
       #默认地址
