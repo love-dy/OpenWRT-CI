@@ -25,7 +25,7 @@ UPDATE_PACKAGE "argon" "jerrykuku/luci-theme-argon" "$([[ $WRT_REPO == *"lede"* 
 
 UPDATE_PACKAGE "passwall" "xiaorouji/openwrt-passwall" "main"
 UPDATE_PACKAGE "openclash" "vernesong/OpenClash" "dev" "pkg"
-#UPDATE_PACKAGE "adguardhome" "rufengsuixing/luci-app-adguardhome" "master"
+UPDATE_PACKAGE "adguardhome" "rufengsuixing/luci-app-adguardhome" "master"
 
 UPDATE_PACKAGE "homeproxy" "VIKINGYFY/homeproxy" "main"
 
