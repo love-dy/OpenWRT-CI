@@ -40,7 +40,7 @@ fi
 
 #添加插件
 echo "CONFIG_PACKAGE_luci-app-adguardhome=y" >> ./.config
-
+echo "CONFIG_PACKAGE_luci-app-tailscale=y" >> ./.config
 
 #添加科学插件
 echo "CONFIG_PACKAGE_luci-app-homeproxy=y" >> ./.config
