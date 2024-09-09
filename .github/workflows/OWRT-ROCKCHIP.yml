@@ -55,7 +55,7 @@ jobs:
       #源码链接
       WRT_REPO: https://github.com/immortalwrt/immortalwrt.git
       #源码分支
-      WRT_BRANCH: master
+      WRT_BRANCH: openwrt-23.05
       #插件调整
       WRT_PACKAGE: ${{inputs.PACKAGE}}
       #仅输出配置文件
