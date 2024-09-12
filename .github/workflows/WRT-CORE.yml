@@ -221,7 +221,6 @@ jobs:
           files: ./wrt/upload/*.*
           body: |
             这是平台固件包，内含多个设备！
-            MTK和QCA全系带开源硬件加速！
 
             源码：${{env.WRT_REPO}}
             分支：${{env.WRT_BRANCH}}
