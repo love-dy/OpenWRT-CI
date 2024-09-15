@@ -86,10 +86,12 @@ CONFIG_PACKAGE_luci-proto-wireguard=y
 
 CONFIG_PACKAGE_luci-theme-argon=y
 CONFIG_PACKAGE_luci-app-argon-config=y
+CONFIG_PACKAGE_luci-theme-bootstrap=y
+CONFIG_PACKAGE_luci-theme-material=y
 
 #插件调整
 #系统上存在旧版 iptables 规则。 不鼓励混合使用 iptables 和 nftables 规则，这可能会导致流量过滤不完整。
-#CONFIG_PACKAGE_luci-app-dockerman=y
+CONFIG_PACKAGE_luci-app-dockerman=y
 
 #删除插件
 CONFIG_PACKAGE_luci-app-ddns=n
