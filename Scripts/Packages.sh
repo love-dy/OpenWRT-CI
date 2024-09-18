@@ -28,7 +28,7 @@ UPDATE_PACKAGE() {
 #UPDATE_PACKAGE "ssr-plus" "fw876/helloworld" "master"
 
 #UPDATE_PACKAGE "homeproxy" "VIKINGYFY/homeproxy" "main"
-#UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
+UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
 #UPDATE_PACKAGE "mihomo" "morytyann/OpenWrt-mihomo" "main"
 #UPDATE_PACKAGE "nekoclash" "Thaolga/luci-app-nekoclash" "main"
 
