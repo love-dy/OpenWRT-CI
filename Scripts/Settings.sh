@@ -31,3 +31,4 @@ echo "CONFIG_PACKAGE_luci-app-tailscale=y" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-passwall=y" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-homeproxy=y" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-openclash=y" >> ./.config
+echo "CONFIG_PACKAGE_luci-app-mihomo=y" >> ./.config
