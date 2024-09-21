@@ -29,11 +29,10 @@ UPDATE_PACKAGE() {
 
 #UPDATE_PACKAGE "homeproxy" "VIKINGYFY/homeproxy" "main"
 #UPDATE_PACKAGE "nekoclash" "Thaolga/luci-app-nekoclash" "main"
+#UPDATE_PACKAGE "mihomo" "morytyann/OpenWrt-mihomo" "main"
 
-UPDATE_PACKAGE "mihomo" "morytyann/OpenWrt-mihomo" "main"
-UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
 UPDATE_PACKAGE "adguardhome" "rufengsuixing/luci-app-adguardhome" "master"
-
+UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
 
 #更新软件包版本
 UPDATE_VERSION() {
